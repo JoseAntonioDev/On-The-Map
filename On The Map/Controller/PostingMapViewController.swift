@@ -41,9 +41,7 @@ class PostingMapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func finishButton(_ sender: Any) {
         // Add the pin location & pop to map/table controller
-        checkForPostOrPut(studentPosting: studentData, students: actualStudents)
-        self.tabBarController?.tabBar.isHidden = false
-        navigationController?.popToRootViewController(animated: true)
+        checkForPostOrPut(studentPosting: studentData, students: StudentsData.actualStudents)
     }
     
     func resetValues() {
@@ -75,7 +73,10 @@ class PostingMapViewController: UIViewController, MKMapViewDelegate {
         studentData.createdAt = response.createdAt
         studentData.objectId = response.objectId
         ParseClient.sessionId = response.objectId
-        actualStudents[0] = studentData
+        StudentsData.actualStudents[0] = studentData
+        
+        self.tabBarController?.tabBar.isHidden = false
+        navigationController?.popToRootViewController(animated: true)
     }
     
     func handlerPutResponse(response: StudentPutResponse?, error: Error?){
@@ -85,7 +86,10 @@ class PostingMapViewController: UIViewController, MKMapViewDelegate {
         }
         // Add the new location to the array of students
         studentData.updatedAt = response.updatedAt
-        actualStudents[0] = studentData
+        StudentsData.actualStudents[0] = studentData
+        
+        self.tabBarController?.tabBar.isHidden = false
+        navigationController?.popToRootViewController(animated: true)
     }
     
     

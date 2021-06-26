@@ -24,7 +24,7 @@ extension Errors: LocalizedError {
         switch self {
         case .userOrPass: return "Invalid email or password, please try again"
         case .udacityServer: return "Error from Udacity server"
-        case .parseServer: return "Error from Parse server"
+        case .parseServer: return "Error connecting the server"
         case .noLocation: return "Introduce a valid location to continue"
         case .invalidURL: return "Invalid Link"
         case .facebook: return "Error login via Facebook"

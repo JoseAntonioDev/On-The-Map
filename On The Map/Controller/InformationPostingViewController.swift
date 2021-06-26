@@ -45,10 +45,7 @@ class InformationPostingViewController: UIViewController {
     }
     
     @IBAction func findLocation(_ sender: Any) {
-        isSearching(true)
         geocodeString(address: self.locationField.text!)
-        
-        isSearching(false)
     }
     
     func restartValues(){
@@ -70,8 +67,10 @@ class InformationPostingViewController: UIViewController {
             postingMapVC.studentData = student
             
             restartValues()
+            isSearching(false)
             navigationController?.pushViewController(postingMapVC, animated: true)
         } else {
+            isSearching(false)
             showError(message: Errors.noLocation.localizedDescription, actualVC: self)
         }
     }
@@ -90,6 +89,7 @@ class InformationPostingViewController: UIViewController {
     
     // This function finds a location through the address string
     func geocodeString(address: String){
+        isSearching(true)
         let geoCoder = CLGeocoder()
         geoCoder.geocodeAddressString(address) { (placemarks, error) in
             DispatchQueue.main.async {
@@ -100,6 +100,7 @@ class InformationPostingViewController: UIViewController {
                 else {
                     if error != nil {
                         showError(message: Errors.noLocation.localizedDescription, actualVC: self)
+                        self.isSearching(false)
                     }
                     return
                 }

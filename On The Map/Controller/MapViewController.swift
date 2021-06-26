@@ -19,13 +19,13 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         
-        populateTheMap(locations: actualStudents)
+        populateTheMap(locations: StudentsData.actualStudents)
         mapView.reloadInputViews()
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(true)
         // Populate the Map with Students locations
-        populateTheMap(locations: actualStudents)
+        populateTheMap(locations: StudentsData.actualStudents)
         mapView.reloadInputViews()
     }
     
@@ -36,7 +36,7 @@ class MapViewController: UIViewController, MKMapViewDelegate {
     
     @IBAction func refreshButton(){
         NavButtonsController.refreshLocations(vc: self)
-        populateTheMap(locations: actualStudents)
+        populateTheMap(locations: StudentsData.actualStudents)
         mapView.reloadInputViews()
     }
     

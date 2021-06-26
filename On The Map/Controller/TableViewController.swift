@@ -36,11 +36,11 @@ class TableViewController: UITableViewController {
     
     //MARK: Table methods
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return actualStudents.count
+        return StudentsData.actualStudents.count
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let student = actualStudents[indexPath.row]
+        let student = StudentsData.actualStudents[indexPath.row]
         
         let url = URL(string: student.mediaURL)
         if let url = url {
@@ -57,7 +57,7 @@ class TableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         // Create the cell with our custom model
         let cell = tableView.dequeueReusableCell(withIdentifier: customCellId) as! CustomCell
-        let student = actualStudents[indexPath.row]
+        let student = StudentsData.actualStudents[indexPath.row]
         // And set the actual student data
         cell.userLabel.text = student.firstName + " " + student.lastName
         cell.linkLabel.text = student.mediaURL

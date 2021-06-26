@@ -33,13 +33,13 @@ class ParseClient {
     //MARK: Methods
     class func getStudentLocation(uniqueKey: String?,completion: @escaping ([StudentLocation]?, Error?) -> Void){
         // We cut & order the results array
-        let limit100 = "?limit=100"
+        let limit100 = "&limit=100"
         let orderUpdatedAt = "?order=-updatedAt"
         
         var url: URL
 
         if let uniqueKey = uniqueKey {
-            let uniqueKey = "?uniqueKey=" + uniqueKey
+            let uniqueKey = "&uniqueKey=" + uniqueKey
             url = URL(string: EndPoints.base + orderUpdatedAt + limit100 + uniqueKey)!
         } else {
             url = URL(string: EndPoints.base + orderUpdatedAt + limit100)!

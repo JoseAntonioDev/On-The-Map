@@ -34,6 +34,7 @@
 		24BD05E22666456100A31615 /* Errors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24BD05E12666456100A31615 /* Errors.swift */; };
 		24C2E83B2642FE0C001DD719 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24C2E83A2642FE0C001DD719 /* MapViewController.swift */; };
 		24D48AE5264AD26900441517 /* InformationPostingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24D48AE4264AD26900441517 /* InformationPostingViewController.swift */; };
+		24F9DB212687E46000A9FB04 /* StudentsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 24F9DB202687E46000A9FB04 /* StudentsData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		24BD05E12666456100A31615 /* Errors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Errors.swift; sourceTree = "<group>"; };
 		24C2E83A2642FE0C001DD719 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		24D48AE4264AD26900441517 /* InformationPostingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationPostingViewController.swift; sourceTree = "<group>"; };
+		24F9DB202687E46000A9FB04 /* StudentsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentsData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 			isa = PBXGroup;
 			children = (
 				249F7B472641D11C0063B4E2 /* UserData.swift */,
+				24F9DB202687E46000A9FB04 /* StudentsData.swift */,
 				24BD05E12666456100A31615 /* Errors.swift */,
 				249052DD26822791002D1D96 /* NetworkTasks.swift */,
 				2415E00126396AB10068A666 /* Parse API */,
@@ -294,6 +297,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				24A7727C263969360095CE12 /* UdacityClient.swift in Sources */,
+				24F9DB212687E46000A9FB04 /* StudentsData.swift in Sources */,
 				2402C89E26331FB50074A10C /* LoginViewController.swift in Sources */,
 				245D77DF2652EF07003A69CE /* CustomCell.swift in Sources */,
 				24C2E83B2642FE0C001DD719 /* MapViewController.swift in Sources */,

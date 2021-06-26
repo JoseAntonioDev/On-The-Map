@@ -43,10 +43,12 @@ class LoginViewController: UIViewController {
     
     @IBAction func logIn(_ sender: Any) {
         setLogginIn(true)
+        
+        // Get a list of students
+        ParseClient.getStudentLocation(uniqueKey: nil, completion: handleGetStudentResponse(response:error:))
+        
         // Post a session with the data from the fields
         UdacityClient.postSession(user: LoginRequest(username: emailField.text ?? "", password: passwordField.text ?? ""), completion: handleLoginResponse(response:error:))
-        // Get a list of students before perfoming the segue
-        ParseClient.getStudentLocation(uniqueKey: nil, completion: handleGetStudentResponse(response:error:))
         
         startFields()
         }
@@ -66,7 +68,7 @@ class LoginViewController: UIViewController {
         }
 
         // Update our actual students data
-        actualStudents = response
+        StudentsData.actualStudents = response
     }
     
     // With this function we perform our initial setup

@@ -22,8 +22,5 @@ class UserData {
 
 var actualUser = UserData()
 
-// Storage our list of student locations
-var actualStudents = [StudentLocation]()
-
 // We keep the facebook ID
 var facebookID = String()

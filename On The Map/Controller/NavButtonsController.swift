@@ -25,7 +25,7 @@ class NavButtonsController {
     class func handlerDeleteResponse(response: DeleteResponse?, error: Error?) {
         if response != nil {
             actualUser.loginData.id = ""
-            actualStudents = []
+            StudentsData.actualStudents = []
         }
     }
     
@@ -37,7 +37,7 @@ class NavButtonsController {
                     showError(message: Errors.parseServer.localizedDescription, actualVC: vc)
                     return
                 }
-                    actualStudents = response
+                StudentsData.actualStudents = response
             }
         }
     }
